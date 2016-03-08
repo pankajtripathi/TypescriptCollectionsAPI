@@ -1,5 +1,5 @@
 <h1>Collection in typescript</h1>
-<p>This is collection framework in typescript inspired by java collection API.</p>
+<p>This is collection framework in typescript inspired by java collection API. This can be used in angular js 2 applications.</p>
 <h3><strong>Table of contents</strong></h3>
 <ol>
 <li><a href="#collection">Collection</a><br />

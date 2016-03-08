@@ -18,12 +18,12 @@
 </li>
 <li><a href="#map">Map</a><br />
 <ol>
-<li>TreeMap</li>
+<li><a href="#treemap">TreeMap</a></li>
 </ol>
 </li>
 </ol>
 <p><strong>Collection</strong></p>
-<p>This is the basic interface containing the genric methods.</p>
+<p>This is the basic interface containing the genric methods. The subsequent implementing interfaces will be having these method's implmentation using various algorithms.</p>
 <table>
 <tbody>
 <tr>
@@ -136,7 +136,7 @@
 <p>put(key:K,value:V)</p>
 </td>
 <td width="102">
-<p>V</p>
+<p>value:V</p>
 </td>
 <td width="418">
 <p>Inserts value v, with key k and returns the stored value</p>
@@ -202,7 +202,7 @@
 <p>get(key:K)</p>
 </td>
 <td width="102">
-<p>V</p>
+<p>value:V</p>
 </td>
 <td width="418">
 <p>returns the value to which the specified key is mapped, or null if this map contains no mapping for the key.</p>
@@ -210,4 +210,34 @@
 </tr>
 </tbody>
 </table>
+<p>&nbsp;</p>
+<h3 id="treemap">Treemap</h3>
+<p>This is a concrete implementation of Map interface. It uses binary search tree to store values. In addition to the Map's methods, it also provides the following methods,</p>
+<table>
+<tbody>
+<tr>
+<td width="200">
+<p><strong>Method Name</strong></p>
+</td>
+<td width="99">
+<p><strong>Return </strong></p>
+</td>
+<td width="570">
+<p><strong>Description</strong></p>
+</td>
+</tr>
+<tr>
+<td width="152">
+<p>printTree()</p>
+</td>
+<td width="99">
+<p>&nbsp;</p>
+</td>
+<td width="389">
+<p>Prints the collection using in order traverse. It will always print the keys in ascending order</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
 <p>&nbsp;</p>

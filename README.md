@@ -22,7 +22,7 @@
 </ol>
 </li>
 </ol>
-<p><strong>Collection</strong></p>
+<h3 id="collection">Collection</h3>
 <p>This is the basic interface containing the genric methods. The subsequent implementing interfaces will be having these method's implmentation using various algorithms.</p>
 <table>
 <tbody>

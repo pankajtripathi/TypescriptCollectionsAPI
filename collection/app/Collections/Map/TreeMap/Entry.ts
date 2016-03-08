@@ -9,7 +9,7 @@ export class Entry<K,V>{
         
     }
     
-    /*setKey(key1:K){
+    setKey(key1:K){
         this.key=key1;
     }
     
@@ -23,5 +23,5 @@ export class Entry<K,V>{
     
     setRightNode(node:Entry<K,V>){
         this.rightNode=node;
-    }*/
+    }
 }

@@ -29,4 +29,9 @@ export interface Map<K,V>{
     * returns the number of entries in map
     */
     size():number;
+    
+    /*
+     * returns the value to which the specified key is mapped, or null if this map contains no mapping for the key.
+     */
+    get(key:K):V;
 }

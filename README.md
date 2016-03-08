@@ -1,12 +1,9 @@
-# AngularjsCollections
-Implementing Collections for Angularjs in typescript
+<h2 id="typescript-collection"><strong>Typescript Collection</strong></h2>
 
-Basic interfaces :
+<p>Basic Interface:</p>
 
-1. Collection : This is the basic interface for the Collection API.
-
-Sub interfaces :
-1. List
-2. Set
-
-2. Map: Contains the data in key, value format 
+<ol>
+<li>Collection : This is the generic interface of collection framework. <br>
+  1.1. List : Contains ordered collection of objects <br>
+  1.2. Set : Contains collection of objects modelling mathematical abstraction</li>
+</ol>

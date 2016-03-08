@@ -119,7 +119,7 @@
 <h3 id="list">List</h3>
 <p>This is collection of elements on the basis of thier indeices.&nbsp;An ordered collection of data , which allows duplication of data.</p>
 <h3 id="set">Set</h3>
-<p>This interface is a sub interface of collection, which models mathematical set abstraction.&nbsp;Duplication is not allowed in this collection along with only one null/undefined entry.</p>
+<p>This interface is a sub interface of collection, which models mathematical set abstraction.&nbsp;Duplication is not allowed in this collection and only one null/undefined entry.</p>
 <h3 id="treeset">Treeset</h3>
 <p>This is one of the set interface's implementaion. It uses TreeMap internally to implement Set interface's method.</p>
 <h3 id="map">Map</h3>

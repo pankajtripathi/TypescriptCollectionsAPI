@@ -1,17 +1,17 @@
 <h1>Collection in typescript</h1>
-<p>This is collection framework in typescript inspired by java collection API. This can be used in angular js 2 applications.</p>
+<p>This is collection framework in typescript inspired by java collection API.</p>
 <h3><strong>Table of contents</strong></h3>
 <ol>
 <li><a href="#collection">Collection</a><br />
 <ol>
-<li>List<br />
+<li><a href="#list">List</a><br />
 <ol>
 <li>Arraylist</li>
 </ol>
 </li>
-<li>Set<br />
+<li><a href="#set">Set</a><br />
 <ol>
-<li>TreeSet</li>
+<li><a href="#treeset">TreeSet</a></li>
 </ol>
 </li>
 </ol>
@@ -116,6 +116,12 @@
 </tr>
 </tbody>
 </table>
+<h3 id="list">List</h3>
+<p>This is collection of elements on the basis of thier indeices.&nbsp;An ordered collection of data , which allows duplication of data.</p>
+<h3 id="set">Set</h3>
+<p>This interface is a sub interface of collection, which models mathematical set abstraction.&nbsp;Duplication is not allowed in this collection along with only one null/undefined entry.</p>
+<h3 id="treeset">Treeset</h3>
+<p>This is one of the set interface's implementaion. It uses TreeMap internally to implement Set interface's method.</p>
 <h3 id="map">Map</h3>
 <p>A map is a collection of key value pair. Unlike others this inerface requires two objects for a single entry.&nbsp;It cannot have duplicate keys. Any attempt to store another value with existing key will result&nbsp;in overwriting the previous value hence lossing it.&nbsp;Duplicate values are possible but with different keys.</p>
 <table>
@@ -239,5 +245,40 @@
 </tr>
 </tbody>
 </table>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
 <p>&nbsp;</p>
 <p>&nbsp;</p>

@@ -19,7 +19,8 @@
     "setup": "npm install && typings install",
     "test": "gulp test",
     "test-coverage": "gulp test-coverage",
-    "typings": "typings"
+    "typings": "typings",
+    "postinstall": "typings install"
   },
   "devDependencies": {
     "gulp": "^3.9.1",

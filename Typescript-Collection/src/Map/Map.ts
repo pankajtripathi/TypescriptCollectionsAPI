@@ -1,4 +1,14 @@
 import {ForEachCallbackMaps} from '../Utils/Function';
+
+
+/**
+ * 
+ * 
+ * @export
+ * @interface Map
+ * @template K
+ * @template V
+ */
 export interface Map<K, V> {
 
     /*

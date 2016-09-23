@@ -1,6 +1,10 @@
 <h1>Collection in typescript</h1>
 <p>A&nbsp;collection framework in typescript inspired by java collection API. This can be used in angular js 2.0.</p>
-<h3><strong>Table of contents</strong></h3>
+<p><strong>Usage :</strong></p>
+<blockquote>
+<p>npm install typescript-collection</p>
+</blockquote>
+<p><strong>Table of contents</strong></p>
 <ol>
 <li><a href="#collection">Collection</a><br />
 <ol>
@@ -245,4 +249,3 @@
 </tr>
 </tbody>
 </table>
-<p>&nbsp;</p>

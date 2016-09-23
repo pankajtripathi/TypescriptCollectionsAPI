@@ -7,6 +7,7 @@ describe("TreeMap",()=>{
 
      const t:TreeMap<KeyTest,ValueTest>=new TreeMap<KeyTest,ValueTest>();
 
+
      describe("isEmpty",()=>{
          it("if the collection is empty",()=>{
              assert.equal(t.isEmpty(), true);
@@ -16,10 +17,24 @@ describe("TreeMap",()=>{
      describe("put",()=>{
          it("insert data",()=>{
              let v:ValueTest=new ValueTest("abc");
-             assert.equal(t.put(new KeyTest("1"),v),v);
+             assert.equal(t.put(new KeyTest("9"),v),v);
          })
      });
 
+     describe("forEach",()=>{
+         it("traverse each",()=>{
+
+        t.put(new KeyTest("1"),new ValueTest("as"));
+        t.put(new KeyTest("3"),new ValueTest("12"));
+        t.put(new KeyTest("2"),new ValueTest("as"));
+
+             t.forEach((k,v)=>{
+                 console.log("key : "+k.val+" value: "+v.val);
+             })
+         })
+     });
+
+    
 
 });
 

@@ -1,10 +1,43 @@
-import { Map } from '../Map';
-import { Entry } from './Entry';
+import {ForEachCallbackMaps} from '../../Utils/Function';
+import {Map} from '../Map';
+import {Entry} from './Entry';
+/**
+ * 
+ * 
+ * @export
+ * @class TreeMap
+ * @implements {Map<K, V>}
+ * @template K
+ * @template V
+ */
 export class TreeMap<K, V> implements Map<K, V>{
 
+    /**
+     * 
+     * 
+     * @private
+     * @type {Entry<K, V>}
+     * @memberOf TreeMap
+     */
     private rootNde: Entry<K, V>;
+    /**
+     * 
+     * 
+     * @private
+     * @type {number}
+     * @memberOf TreeMap
+     */
     private treeSize: number = 0;
 
+    /**
+     * 
+     * 
+     * @param {K} key
+     * @param {V} value
+     * @returns {V}
+     * 
+     * @memberOf TreeMap
+     */
     put(key: K, value: V): V {
         if (this.rootNde === undefined) {
             this.rootNde = new Entry<K, V>();
@@ -39,12 +72,27 @@ export class TreeMap<K, V> implements Map<K, V>{
         }
     }
 
+    /**
+     * 
+     * 
+     * @returns {boolean}
+     * 
+     * @memberOf TreeMap
+     */
     clear(): boolean {
         this.rootNde = null;
         this.treeSize = 0;
         return true;
     }
 
+    /**
+     * 
+     * 
+     * @param {K} key
+     * @returns {boolean}
+     * 
+     * @memberOf TreeMap
+     */
     containsKey(key: K): boolean {
         let node: Entry<K, V> = this.rootNde;
         do {
@@ -61,6 +109,14 @@ export class TreeMap<K, V> implements Map<K, V>{
         return false;
     }
 
+    /**
+     * 
+     * 
+     * @param {V} value
+     * @returns {boolean}
+     * 
+     * @memberOf TreeMap
+     */
     containsValue(value: V): boolean {
         let node: Entry<K, V> = this.rootNde;
         do {
@@ -77,6 +133,13 @@ export class TreeMap<K, V> implements Map<K, V>{
         return false;
     }
 
+    /**
+     * 
+     * 
+     * @returns {boolean}
+     * 
+     * @memberOf TreeMap
+     */
     isEmpty(): boolean {
         if(this.size()===0){
             return  true;
@@ -84,10 +147,25 @@ export class TreeMap<K, V> implements Map<K, V>{
         return false;
     }
 
+    /**
+     * 
+     * 
+     * @returns {number}
+     * 
+     * @memberOf TreeMap
+     */
     size(): number {
         return this.treeSize;
     }
 
+    /**
+     * 
+     * 
+     * @param {K} key
+     * @returns {V}
+     * 
+     * @memberOf TreeMap
+     */
     get(key: K): V {
         let node: Entry<K, V> = this.rootNde;
 
@@ -105,10 +183,24 @@ export class TreeMap<K, V> implements Map<K, V>{
         return null;
     }
     
+    /**
+     * 
+     * 
+     * 
+     * @memberOf TreeMap
+     */
     public printTree() {
         this.inOrderTraverseTree(this.rootNde);
     }
 
+    /**
+     * 
+     * 
+     * @private
+     * @param {Entry<K, V>} focusNode
+     * 
+     * @memberOf TreeMap
+     */
     private inOrderTraverseTree(focusNode: Entry<K, V>) {
         if (focusNode != undefined) {
             this.inOrderTraverseTree(focusNode.leftNode);
@@ -117,6 +209,17 @@ export class TreeMap<K, V> implements Map<K, V>{
         }
     }
 
+    /**
+     * 
+     * 
+     * @private
+     * @param {K} k
+     * @param {V} v
+     * @param {Entry<K, V>} parent
+     * @returns {V}
+     * 
+     * @memberOf TreeMap
+     */
     private saveEntry(k: K, v: V, parent: Entry<K, V>): V {
         parent.setKey(k);
         parent.setValue(v);
@@ -124,7 +227,44 @@ export class TreeMap<K, V> implements Map<K, V>{
         return v;
     }
 
+    /**
+     * 
+     * 
+     * @private
+     * @param {*} object
+     * @returns {string}
+     * 
+     * @memberOf TreeMap
+     */
     private getComparableValue(object: any): string {
         return JSON.stringify(object);
+    }
+
+    /**
+     * 
+     * 
+     * @param {ForEachCallbackMaps<K,V>} callback
+     * 
+     * @memberOf TreeMap
+     */
+    public forEach(callback:ForEachCallbackMaps<K,V>){
+        this.callBackMethod(this.rootNde,callback);
+    }
+
+    /**
+     * 
+     * 
+     * @private
+     * @param {Entry<K,V>} focusNode
+     * @param {ForEachCallbackMaps<K,V>} callback
+     * 
+     * @memberOf TreeMap
+     */
+    private callBackMethod(focusNode:Entry<K,V>,callback:ForEachCallbackMaps<K,V>){
+         if (focusNode != undefined) {
+            this.callBackMethod(focusNode.leftNode,callback);
+            callback(focusNode.key,focusNode.value);
+            this.callBackMethod(focusNode.rightNode,callback);
+        }
     }
 }

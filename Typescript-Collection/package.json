@@ -1,0 +1,33 @@
+{
+  "name": "typescript-collection",
+  "version": "1.0.0",
+  "description": "Collection framework in typescript follwing java's",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pankajtripathi/AngularjsCollections.git"
+  },
+  "author": "bhaskerpyadav@gmail.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pankajtripathi/AngularjsCollections.git"
+  },
+  "homepage": "https://github.com/pankajtripathi/AngularjsCollections.git",
+  "scripts": {
+    "compile": "gulp compile",
+    "compile-test": "gulp compile-test",
+    "gulp": "gulp",
+    "setup": "npm install && typings install",
+    "test": "gulp test",
+    "test-coverage": "gulp test-coverage",
+    "typings": "typings"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-istanbul": "^1.1.1",
+    "gulp-mocha": "^3.0.1",
+    "gulp-typescript": "^2.13.6",
+    "gulp-uglify": "^2.0.0",
+    "typescript": "^1.8.10",
+    "typings": "^1.3.3"
+  }
+}

@@ -117,20 +117,19 @@ export class TreeMap<K, V> implements Map<K, V>{
      * 
      * @memberOf TreeMap
      */
+    //TODO:: Find a way to optimize this method as even after getting the key it keeps on running
     containsValue(value: V): boolean {
-        let node: Entry<K, V> = this.rootNde;
-        do {
-            let num: number = this.getComparableValue(node.value).localeCompare(this.getComparableValue(value));
-            if (num === 0) {
-                return true;
-            } else if (num === -1) {
-                node = node.rightNode;
-            } else if (num === 1) {
-                node = node.leftNode;
+        let isPresent:boolean=false;
+        
+        this.forEach((k,v)=>{
+            //console.log(" v : "+this.getComparableValue(v)+" value : "+this.getComparableValue(value));
+            if(this.getComparableValue(v).localeCompare(this.getComparableValue(value))===0){
+                isPresent=true;
+                return;
             }
-        } while (node != undefined)
+        });
 
-        return false;
+        return isPresent;
     }
 
     /**
@@ -186,26 +185,16 @@ export class TreeMap<K, V> implements Map<K, V>{
     /**
      * 
      * 
-     * 
-     * @memberOf TreeMap
-     */
-    public printTree() {
-        this.inOrderTraverseTree(this.rootNde);
-    }
-
-    /**
-     * 
-     * 
      * @private
      * @param {Entry<K, V>} focusNode
      * 
      * @memberOf TreeMap
      */
-    private inOrderTraverseTree(focusNode: Entry<K, V>) {
+    private inOrderTraverseTree(focusNode: Entry<K, V>,callback:ForEachCallbackMaps<K,V>) {
         if (focusNode != undefined) {
-            this.inOrderTraverseTree(focusNode.leftNode);
-            console.log("key " + JSON.stringify(focusNode.key) + "  value " + JSON.stringify(focusNode.value));
-            this.inOrderTraverseTree(focusNode.rightNode);
+            this.inOrderTraverseTree(focusNode.leftNode,callback);
+            callback(focusNode.key,focusNode.value);
+            this.inOrderTraverseTree(focusNode.rightNode,callback);
         }
     }
 
@@ -248,23 +237,7 @@ export class TreeMap<K, V> implements Map<K, V>{
      * @memberOf TreeMap
      */
     public forEach(callback:ForEachCallbackMaps<K,V>){
-        this.callBackMethod(this.rootNde,callback);
+        this.inOrderTraverseTree(this.rootNde,callback);
     }
 
-    /**
-     * 
-     * 
-     * @private
-     * @param {Entry<K,V>} focusNode
-     * @param {ForEachCallbackMaps<K,V>} callback
-     * 
-     * @memberOf TreeMap
-     */
-    private callBackMethod(focusNode:Entry<K,V>,callback:ForEachCallbackMaps<K,V>){
-         if (focusNode != undefined) {
-            this.callBackMethod(focusNode.leftNode,callback);
-            callback(focusNode.key,focusNode.value);
-            this.callBackMethod(focusNode.rightNode,callback);
-        }
-    }
 }

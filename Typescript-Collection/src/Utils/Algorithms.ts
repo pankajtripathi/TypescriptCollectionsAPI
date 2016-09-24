@@ -20,4 +20,17 @@ export class Algorithm{
         return md5(data);
     }
 
+    /**
+     * 
+     * 
+     * @static
+     * @param {*} object
+     * @returns {string}
+     * 
+     * @memberOf Algorithm
+     */
+    public static getComparableValue(object: any): string {
+        return JSON.stringify(object);
+    }
+
 }

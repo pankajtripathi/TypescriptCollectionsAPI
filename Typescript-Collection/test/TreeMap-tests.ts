@@ -35,13 +35,11 @@ describe("TreeMap",()=>{
      });
 
      describe("forEach",()=>{
-         let count:number=0;
          it("traverse each",()=>{
              t.forEach((k,v)=>{
-                 count++;
+                 assert.equal(t.get(k),v);
              })
          })
-         assert.equal(count,t.size());
      });
 
      describe("containsKey",()=>{
@@ -85,6 +83,19 @@ describe("TreeMap",()=>{
          });
      });
 
+    describe("referenceTest",()=>{
+        it("reference insdie the collection should refelect changes",()=>{
+                t.forEach((k,v)=>{
+                    v.val2="bhasker";
+                })
+
+                t.forEach((k,v)=>{
+                    assert.equal(v.val2,"bhasker");
+                })
+        })
+    })
+
+
      describe("isEmpty",()=>{
          it("if the collection is empty",()=>{
              assert.equal(t.isEmpty(), false);
@@ -110,8 +121,6 @@ describe("TreeMap",()=>{
          });
      });
 
-    
-
 });
 
 
@@ -124,6 +133,7 @@ class KeyTest{
 
 class ValueTest{
     val:string;
+    val2:string;
     constructor(val:string){
         this.val=val;
     }

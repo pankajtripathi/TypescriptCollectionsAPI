@@ -54,4 +54,14 @@ export interface Map<K, V> {
      * @memberOf Map
      */
     forEach(callback:ForEachCallbackMaps<K,V>);
+
+    /**
+     * 
+     * 
+     * @param {K} key
+     * @returns {V}
+     * 
+     * @memberOf Map
+     */
+    remove(key:K):V;
 }

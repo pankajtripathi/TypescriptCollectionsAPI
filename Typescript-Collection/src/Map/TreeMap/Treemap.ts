@@ -240,4 +240,30 @@ export class TreeMap<K, V> implements Map<K, V>{
         this.inOrderTraverseTree(this.rootNde,callback);
     }
 
+
+    /**
+     * 
+     * 
+     * @param {K} key
+     * @returns {V}
+     * 
+     * @memberOf TreeMap
+     */
+    remove(key:K):V{
+        let node: Entry<K, V> = this.rootNde;
+
+        do {
+            let num: number = this.getComparableValue(node.key).localeCompare(this.getComparableValue(key));
+            if (num === 0) {
+                
+                return node.value;
+            } else if (num === -1) {
+                node = node.rightNode;
+            } else if (num === 1) {
+                node = node.leftNode;
+            }
+        } while (node != undefined)
+
+        return null;
+    }
 }

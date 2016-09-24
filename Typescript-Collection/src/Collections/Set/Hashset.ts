@@ -99,20 +99,8 @@ export class HashSet<E> implements Set<E>{
      * @memberOf HashSet
      */
     private generateHash(data: E): string {
-        return Algorithm.generateHashMD5(this.getComparableValue(data));
+        return Algorithm.generateHashMD5(Algorithm.getComparableValue(data));
     }
 
-    /**
- * 
- * 
- * @private
- * @param {*} object
- * @returns {string}
- * 
- * @memberOf TreeMap
- */
-    private getComparableValue(object: any): string {
-        return JSON.stringify(object);
-    }
 
 } 

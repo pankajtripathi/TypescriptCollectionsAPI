@@ -1,3 +1,13 @@
+import {ForEachCallbackFunction} from '../Utils/Function';
+
+
+/**
+ * 
+ * 
+ * @export
+ * @interface Collection
+ * @template E
+ */
 export interface Collection<E>{
    
    /*
@@ -34,4 +44,13 @@ export interface Collection<E>{
     * returns an array containing the collection 
     */
     toArray():Array<E>;
+
+    /**
+     * 
+     * 
+     * @param {ForEachCallbackFunction<E>} callback
+     * 
+     * @memberOf Collection
+     */
+    forEach(callback:ForEachCallbackFunction<E>);
 }

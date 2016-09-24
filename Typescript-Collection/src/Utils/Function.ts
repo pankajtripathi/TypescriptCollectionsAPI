@@ -6,9 +6,7 @@
  * @template T
  */
 export interface ForEachCallbackFunction<T> {
-    /**
-     * 
-     */
+
     (a: T): boolean | void;
 
 }
@@ -21,6 +19,7 @@ export interface ForEachCallbackFunction<T> {
  * @template K
  * @template V
  */
-export interface ForEachCallbackMaps<K,V>{
-    (k:K,v:V):boolean|void;
+export interface ForEachCallbackMaps<K, V> {
+
+    (k: K, v: V): boolean | void;
 }

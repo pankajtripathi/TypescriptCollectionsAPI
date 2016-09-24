@@ -35,11 +35,13 @@ describe("TreeMap",()=>{
      });
 
      describe("forEach",()=>{
+         let count:number=0;
          it("traverse each",()=>{
              t.forEach((k,v)=>{
-                 console.log("key : "+k.val+" value: "+v.val);
+                 count++;
              })
          })
+         assert.equal(count,t.size());
      });
 
      describe("containsKey",()=>{
@@ -92,6 +94,19 @@ describe("TreeMap",()=>{
      describe("clear",()=>{
          it("clear the map",()=>{
              assert.equal(t.clear(),true);
+         });
+     });
+
+     describe("StringNumber",()=>{
+         it("Test map with number as key and String as values",()=>{
+             let map:TreeMap<number,string>=new TreeMap<number,string>();
+             assert.equal(map.put(3,"bhasker"),"bhasker");
+             assert.equal(map.put(1,"pankaj"),"pankaj");
+             assert.equal(map.put(9,"bhavik"),"bhavik");
+             assert.equal(map.get(1),"pankaj");
+             assert.equal(map.containsKey(9),true);
+             assert.equal(map.containsValue("bhasker"),true);
+             assert.equal(map.size(),3);
          });
      });
 

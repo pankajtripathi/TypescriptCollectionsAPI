@@ -13,24 +13,39 @@ describe("TreeMap",()=>{
          it("if the collection is empty",()=>{
              assert.equal(t.isEmpty(), true);
          });
+         it("try to remove from empty map",()=>{
+             assert.equal(t.remove(new KeyTest("abc")), null);
+         });
      });
+
+     function insertData(){
+
+             let v:ValueTest=new ValueTest("abc");
+             assert.equal(t.put(new KeyTest("50"),v),v);
+
+             v=new ValueTest("as");
+             assert.equal(t.put(new KeyTest("30"),v),v);
+
+            v=new ValueTest("1");
+             assert.equal(t.put(new KeyTest("20"),v),v);
+
+             v=new ValueTest("as");
+             assert.equal(t.put(new KeyTest("40"),v),v);
+
+             v=new ValueTest("12");
+             assert.equal(t.put(new KeyTest("70"),v),v);
+
+             v=new ValueTest("13");
+             assert.equal(t.put(new KeyTest("60"),v),v);
+
+             v=new ValueTest("14");
+             assert.equal(t.put(new KeyTest("80"),v),v);
+
+     }
 
      describe("put",()=>{
          it("insert data",()=>{
-             let v:ValueTest=new ValueTest("abc");
-             assert.equal(t.put(new KeyTest("3"),v),v);
-
-             v=new ValueTest("as");
-             assert.equal(t.put(new KeyTest("1"),v),v);
-
-            v=new ValueTest("1");
-             assert.equal(t.put(new KeyTest("9"),v),v);
-
-             v=new ValueTest("as");
-             assert.equal(t.put(new KeyTest("2"),v),v);
-
-             v=new ValueTest("12");
-             assert.equal(t.put(new KeyTest("9"),v),v);
+             insertData();
          })
      });
 
@@ -44,10 +59,10 @@ describe("TreeMap",()=>{
 
      describe("containsKey",()=>{
          it("if the map contains the key",()=>{
-             assert.equal(t.containsKey(new KeyTest("2")),true);
-             assert.equal(t.containsKey(new KeyTest("9")),true);
-             assert.equal(t.containsKey(new KeyTest("3")),true);
-             assert.equal(t.containsKey(new KeyTest("1")),true);
+             assert.equal(t.containsKey(new KeyTest("20")),true);
+             assert.equal(t.containsKey(new KeyTest("80")),true);
+             assert.equal(t.containsKey(new KeyTest("30")),true);
+             assert.equal(t.containsKey(new KeyTest("60")),true);
              assert.equal(t.containsKey(new KeyTest("990099")),false);
          })
      });
@@ -64,19 +79,17 @@ describe("TreeMap",()=>{
 
      describe("size",()=>{
          it("size of the map",()=>{
-            assert.equal(t.size(),4);
+            assert.equal(t.size(),7);
          });
      });
 
      describe("get",()=>{
          it("get value from key",()=>{
-             let v:ValueTest=t.get(new KeyTest("3"));
-             assert.equal(v.val,"abc");
-             v=t.get(new KeyTest("1"));
+             let v:ValueTest=t.get(new KeyTest("30"));
              assert.equal(v.val,"as");
-             v=t.get(new KeyTest("9"));
-             assert.equal(v.val,"12");
-             v=t.get(new KeyTest("2"));
+             v=t.get(new KeyTest("80"));
+             assert.equal(v.val,"14");
+             v=t.get(new KeyTest("40"));
              assert.equal(v.val,"as");
              v=t.get(new KeyTest("9090"));
              assert.equal(v,null);
@@ -93,6 +106,64 @@ describe("TreeMap",()=>{
                     assert.equal(v.val2,"bhasker");
                 })
         })
+    })
+
+    describe("remove",()=>{
+        let str="";
+        it("should remove key 20 from map",()=>{
+            str="";
+            assert.notEqual(t.remove(new KeyTest("20")),undefined);
+            t.forEach((k,v)=>{
+             str+=(k.val+",");
+            })
+            assert.equal(str,"30,40,50,60,70,80,");
+        });
+        it("should remove key 30 from map",()=>{
+            str="";
+            assert.notEqual(t.remove(new KeyTest("30")),undefined);
+            t.forEach((k,v)=>{
+                str+=(k.val+",");
+            })
+            assert.equal(str,"40,50,60,70,80,");
+        });
+
+        it("should remove key 80 from map",()=>{
+            str="";
+            assert.notEqual(t.remove(new KeyTest("80")),undefined);
+            t.forEach((k,v)=>{
+                str+=(k.val+",");
+            })
+            assert.equal(str,"40,50,60,70,");
+        });
+
+        it("should remove key 70 from map",()=>{
+            str="";
+            assert.notEqual(t.remove(new KeyTest("70")),undefined);
+            t.forEach((k,v)=>{
+                str+=(k.val+",");
+            })
+            assert.equal(str,"40,50,60,");
+        });
+
+        it("should remove key 50 from map",()=>{
+            str="";
+            insertData();
+            assert.notEqual(t.remove(new KeyTest("50")),undefined);
+            t.forEach((k,v)=>{
+                str+=(k.val+",");
+            })
+            assert.equal(str,"20,30,40,60,70,80,");
+        });
+
+        it("should try to remove key 999 from map",()=>{
+            str="";
+            assert.equal(t.remove(new KeyTest("999")),undefined);
+            t.forEach((k,v)=>{
+                str+=(k.val+",");
+            })
+            assert.equal(str,"20,30,40,60,70,80,");
+        });
+
     })
 
 

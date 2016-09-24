@@ -1,3 +1,4 @@
+import {Algorithm} from '../../Utils/Algorithms';
 import {ForEachCallbackMaps} from '../../Utils/Function';
 import {Map} from '../Map';
 import {Entry} from './Entry';
@@ -168,7 +169,7 @@ export class TreeMap<K, V> implements Map<K, V>{
     get(key: K): V {
         let node: Entry<K, V> = this.rootNde;
 
-        do {
+        while (node != undefined) {
             let num: number = this.getComparableValue(node.key).localeCompare(this.getComparableValue(key));
             if (num === 0) {
                 return node.value;
@@ -177,7 +178,7 @@ export class TreeMap<K, V> implements Map<K, V>{
             } else if (num === 1) {
                 node = node.leftNode;
             }
-        } while (node != undefined)
+        } 
 
         return null;
     }
@@ -250,20 +251,41 @@ export class TreeMap<K, V> implements Map<K, V>{
      * @memberOf TreeMap
      */
     remove(key:K):V{
-        let node: Entry<K, V> = this.rootNde;
-
-        do {
-            let num: number = this.getComparableValue(node.key).localeCompare(this.getComparableValue(key));
-            if (num === 0) {
-                
-                return node.value;
-            } else if (num === -1) {
-                node = node.rightNode;
-            } else if (num === 1) {
-                node = node.leftNode;
-            }
-        } while (node != undefined)
-
-        return null;
+        let val:V=this.get(key);
+        if(val!=undefined){
+        this.rootNde=this.deleteEntry(this.rootNde,key);
+        this.treeSize--;
+        }
+        return val;
     }
+
+    private deleteEntry(node:Entry<K,V>,key:K):Entry<K,V>{
+        let diff=Algorithm.getComparableValue(node.key).localeCompare(Algorithm.getComparableValue(key));
+        if(diff>0){
+            node.leftNode=this.deleteEntry(node.leftNode,key);
+        }else if(diff<0){
+            node.rightNode=this.deleteEntry(node.rightNode,key);
+        }else if(diff === 0){
+            if(node.leftNode===undefined){
+                return node.rightNode;
+            }else if(node.rightNode===undefined){
+                return node.leftNode;
+            }
+
+            node.key=this.getMinimumValue(node.rightNode);
+
+            node.rightNode=this.deleteEntry(node.rightNode,node.key);
+        }
+        return node;
+    }
+
+    private getMinimumValue(node:Entry<K,V>):K{
+        let minimumKey:K=node.key;
+        while(node.leftNode!=undefined){
+            minimumKey=node.leftNode.key;
+            node=node.leftNode;
+        }
+        return minimumKey;
+    }   
+
 }

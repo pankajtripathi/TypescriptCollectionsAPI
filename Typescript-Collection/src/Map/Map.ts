@@ -1,4 +1,4 @@
-import {ForEachCallbackMaps} from '../Utils/Function';
+import {FilterCallbackMaps, ForEachCallbackMaps} from '../Utils/Function';
 
 
 /**
@@ -53,7 +53,7 @@ export interface Map<K, V> {
      * 
      * @memberOf Map
      */
-    forEach(callback:ForEachCallbackMaps<K,V>);
+    forEach(callback: ForEachCallbackMaps<K, V>);
 
     /**
      * 
@@ -63,5 +63,15 @@ export interface Map<K, V> {
      * 
      * @memberOf Map
      */
-    remove(key:K):V;
+    remove(key: K): V;
+
+
+    /**
+     * 
+     * 
+     * @param {FilterCallbackMaps<K, V>} callback
+     * 
+     * @memberOf Map
+     */
+    filter(callback: FilterCallbackMaps<K, V>);
 }

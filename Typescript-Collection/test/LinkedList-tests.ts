@@ -35,6 +35,19 @@ describe("LinkedList",()=>{
         });
     });
 
+
+    describe("filter",()=>{
+        it("should filter this collection if entry's val starts from b",()=>{
+
+
+            list.filter((e)=>{
+                return e.val.charAt(0)=='b';
+            })
+
+            assert.equal(list.contains(new EntryTest("bhasker")),false);
+        })
+    })
+
     describe("isEmpty",()=>{
         it("should return true if collection is empty",()=>{
             assert.equal(list.isEmpty(),false);
@@ -44,8 +57,8 @@ describe("LinkedList",()=>{
     describe("toArray",()=>{
         it("should return the collection in an array",()=>{
             let arrayL=list.toArray();
-            assert.equal(arrayL[0].val,"bhasker");
-            assert.equal(arrayL.length,4);
+            assert.equal(arrayL[0].val,"pankaj");
+            assert.equal(arrayL.length,1);
         });
     });
 

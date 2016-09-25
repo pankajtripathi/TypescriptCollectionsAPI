@@ -1,6 +1,6 @@
 import {TreeMap} from '../../Map/TreeMap/Treemap';
 import {Algorithm} from '../../Utils/Algorithms';
-import {ForEachCallbackFunction} from '../../Utils/Function';
+import {FilterCallback, FilterCallbackMaps, ForEachCallbackFunction} from '../../Utils/Function';
 import {Set} from './Set';
 
 /**
@@ -55,7 +55,12 @@ export class HashSet<E> implements Set<E>{
      * removes object e from collection
      */
     remove(e: E): boolean {
-        return false;
+        let returnValue: E = this.hashSet.remove(this.generateHash(e));
+        if (returnValue === null) {
+            return false;
+        } else {
+            return true;
+        }
     }
 
     /*
@@ -86,7 +91,7 @@ export class HashSet<E> implements Set<E>{
      * @memberOf Collection
      */
     forEach(callback: ForEachCallbackFunction<E>) {
-
+        this.hashSet.forEach((k, v) => callback(v));
     }
 
     /**
@@ -102,5 +107,20 @@ export class HashSet<E> implements Set<E>{
         return Algorithm.generateHashMD5(Algorithm.getComparableValue(data));
     }
 
+
+    /**
+     * 
+     * 
+     * @param {FilterCallback<E>} callback
+     * 
+     * @memberOf HashSet
+     */
+    filter(callback: FilterCallback<E>) {
+        this.forEach((e)=>{
+            if(callback(e)){
+                this.remove(e);
+            }
+        });
+    }
 
 } 

@@ -17,11 +17,4 @@ export class Entry<K,V>{
         this.value=value1;
     }
     
-    setLeftNode(node:Entry<K,V>){
-        this.leftNode=node;
-    }
-    
-    setRightNode(node:Entry<K,V>){
-        this.rightNode=node;
-    }
 }

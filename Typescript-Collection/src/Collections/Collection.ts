@@ -1,4 +1,4 @@
-import {ForEachCallbackFunction} from '../Utils/Function';
+import {FilterCallback, FilterCallbackMaps, ForEachCallbackFunction} from '../Utils/Function';
 
 
 /**
@@ -53,4 +53,14 @@ export interface Collection<E>{
      * @memberOf Collection
      */
     forEach(callback:ForEachCallbackFunction<E>);
+
+    /**
+     * 
+     * 
+     * @param {FilterCallback<E>} callback
+     * 
+     * @memberOf Collection
+     */
+    filter(callback:FilterCallback<E>);
+
 }

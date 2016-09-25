@@ -1,5 +1,5 @@
 import {Algorithm} from '../../Utils/Algorithms';
-import {ForEachCallbackMaps} from '../../Utils/Function';
+import {FilterCallbackMaps, ForEachCallbackMaps} from '../../Utils/Function';
 import {Map} from '../Map';
 import {Entry} from './Entry';
 /**
@@ -287,5 +287,20 @@ export class TreeMap<K, V> implements Map<K, V>{
         }
         return minimumKey;
     }   
+
+    /**
+     * This method filters the current collection based on the outcome of callback method
+     * 
+     * @param {FilterCallbackMaps<K, V>} callback
+     * 
+     * @memberOf TreeMap
+     */
+    filter(callback: FilterCallbackMaps<K, V>){
+        this.forEach((k,v)=>{
+            if(callback(k,v)){
+                this.remove(k);
+            }
+        });
+    }
 
 }

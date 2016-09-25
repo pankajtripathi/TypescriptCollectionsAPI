@@ -32,16 +32,41 @@ describe("HashSet",()=>{
         });
     });
 
+    describe("remove",()=>{
+        it("should remove bhasker from the set",()=>{
+            assert.equal(hashSet.remove(new EntryTest("bhasker")),true);
+        })
+        it("should return false for bhasker now",()=>{
+            assert.equal(hashSet.remove(new EntryTest("bhasker")),false);
+        })
+    });
+
     describe("isEmpty",()=>{
         it("should return true if collection is empty",()=>{
             assert.equal(hashSet.isEmpty(),false);
         });
     });
 
+
+    describe("filter",()=>{
+        it("should filter this collection if entry's val starts from b",()=>{
+            hashSet.filter((e)=>{
+                return e.val.charAt(0)=='b';
+            })
+        })
+    })
+    describe("forEach",()=>{
+        it("should print all the contents",()=>{
+            hashSet.forEach(v=>{
+                console.log(v.val);
+            })
+        })
+    })
+
     describe("toArray",()=>{
         it("should return the collection in an array",()=>{
             let array:Array<EntryTest>=hashSet.toArray();
-            assert.equal(array[0].val,"bhasker");
+            assert.equal(array[0].val,"pankaj");
         });
     });
 

@@ -23,3 +23,26 @@ export interface ForEachCallbackMaps<K, V> {
 
     (k: K, v: V): boolean | void;
 }
+
+/**
+ * 
+ * 
+ * @export
+ * @interface FilterCallbackMaps
+ * @template K
+ * @template V
+ */
+export interface FilterCallbackMaps<K, V> {
+    (k: K, v: V): boolean;
+}
+
+/**
+ * 
+ * 
+ * @export
+ * @interface FilterCallback
+ * @template E
+ */
+export interface FilterCallback<E> {
+    (e: E): boolean;
+}

@@ -1,5 +1,5 @@
 import {Algorithm} from '../../Utils/Algorithms';
-import {ForEachCallbackFunction} from '../../Utils/Function';
+import {FilterCallback, ForEachCallbackFunction} from '../../Utils/Function';
 import {List} from './List';
 
 /**
@@ -57,10 +57,10 @@ export class LinkedList<E> implements List<E>{
      * returns true is set contains e
      */
     contains(e: E): boolean {
-        let node=this.findEntry(e);
-        if(node==undefined){
+        let node = this.findEntry(e);
+        if (node == undefined) {
             return false;
-        }else{
+        } else {
             return true;
         }
     }
@@ -78,16 +78,22 @@ export class LinkedList<E> implements List<E>{
     /*
      * removes object e from collection
      */
-    remove(e: E): boolean{
-        let node=this.findEntry(e);
-        if(node==undefined){
+    remove(e: E): boolean {
+        let node = this.findEntry(e);
+        if (node === undefined) {
             return false;
-        }else{
-            let previousNode=node.previous;
-            let nextNode=node.next;
-            previousNode.next=nextNode;
-            nextNode.previous=previousNode;
-            node=null;
+        } else {
+            let previousNode = node.previous;
+            let nextNode = node.next;
+            if (previousNode != undefined) {
+                previousNode.next = nextNode;
+            }else{
+                this.rootNode=nextNode;
+            }
+            if (nextNode != undefined) {
+                nextNode.previous = previousNode;
+            }
+            node = null;
             this.dataSize--;
             return true;
         }
@@ -96,7 +102,7 @@ export class LinkedList<E> implements List<E>{
     /*
      * returns the size of the collection
      */
-    size(): number{
+    size(): number {
         return this.dataSize;
     }
 
@@ -104,8 +110,8 @@ export class LinkedList<E> implements List<E>{
      * returns an array containing the collection 
      */
     toArray(): Array<E> {
-        let arrayData:Array<E>=new Array<E>();
-        this.forEach(e=>{
+        let arrayData: Array<E> = new Array<E>();
+        this.forEach(e => {
             arrayData.push(e);
         });
         return arrayData;
@@ -140,11 +146,26 @@ export class LinkedList<E> implements List<E>{
         while (currentNode != undefined) {
             if (Algorithm.getComparableValue(e).localeCompare(Algorithm.getComparableValue(currentNode.element)) === 0) {
                 return currentNode;
-            }else{
-                currentNode=currentNode.next;
+            } else {
+                currentNode = currentNode.next;
             }
         }
         return null;
+    }
+
+    /**
+     * 
+     * 
+     * @param {FilterCallback<E>} callback
+     * 
+     * @memberOf HashSet
+     */
+    filter(callback: FilterCallback<E>) {
+        this.forEach((e) => {
+            if (callback(e)) {
+                this.remove(e);
+            }
+        });
     }
 }
 

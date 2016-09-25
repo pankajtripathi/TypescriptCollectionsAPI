@@ -4,12 +4,12 @@
 <ul>
 <li><a href="#_Toc462579160">Usage</a></li>
 <li><a href="#_Toc462579161">Collection</a></li>
-<li><a href="#_Toc462579162">List</a></li>
-<li><a href="#_Toc462579163">LinkedList</a></li>
-<li><a href="#_Toc462579164">Set</a></li>
-<li><a href="#_Toc462579165">HashSet</a></li>
+<a href="#_Toc462579162">---List</a><br/>
+<a href="#_Toc462579163">------LinkedList</a><br/>
+<a href="#_Toc462579164">---Set</a><br/>
+<a href="#_Toc462579165">------HashSet</a><br/>
 <li><a href="#_Toc462579166">Map</a></li>
-<li><a href="#_Toc462579167">Treemap</a></li>
+<a href="#_Toc462579167">---Treemap</a><br/>
 </ul>
 <h2><a name="_Toc462579160"></a>Usage</h2>
 <ul>

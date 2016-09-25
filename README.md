@@ -35,13 +35,13 @@
 </ol>
 <h3 id="collection">Collection</h3>
 <p>This is the basic interface containing the genric methods. The subsequent implementing interfaces will be having these method's implmentation using various algorithms.</p>
-<table border="1" cellspacing="0" cellpadding="0">
+<table cellspacing="0" cellpadding="0">
 <tbody>
 <tr>
 <td width="200">
 <p><strong>Method Name</strong></p>
 </td>
-<td width="102">
+<td style="width: 102px; height: 10px;" width="102">
 <p><strong>Return </strong></p>
 </td>
 <td width="570">
@@ -136,6 +136,17 @@
 <p>performs the passed function on each entry</p>
 </td>
 </tr>
+<tr>
+<td width="120">
+<p>filter</p>
+</td>
+<td width="102">
+<p>function</p>
+</td>
+<td width="418">
+<p>filters map based on boolean outcome of passed function</p>
+</td>
+</tr>
 </tbody>
 </table>
 <h3 id="list">List</h3>
@@ -154,7 +165,7 @@
 <table>
 <tbody>
 <tr>
-<td width="200">
+<td style="width: 102px;" width="200">
 <p><strong>Method Name</strong></p>
 </td>
 <td width="102">
@@ -240,6 +251,20 @@
 <td width="418">
 <p>returns the value to which the specified key is mapped, or null if this map contains no mapping for the key.</p>
 </td>
+</tr>
+<tr>
+<td width="120">&nbsp;forEach</td>
+<td width="102">&nbsp;function</td>
+<td width="418">
+<p>performs the passed function on each entry</p>
+</td>
+</tr>
+<tr>
+<td width="120">
+<p>&nbsp;filter</p>
+</td>
+<td style="width: 102px;" width="102">&nbsp;function</td>
+<td width="418">filters map based on boolean outcome of passed function</td>
 </tr>
 </tbody>
 </table>

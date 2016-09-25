@@ -1,28 +1,33 @@
 <h1><a name="_Toc462579159"></a>Typescript Collection</h1>
 <p>Collection API in typescript following Java&rsquo;s collection framework.</p>
-<p>Table of Contents</p>
-<p><a href="#_Toc462579159">Typescript Collection. 1</a></p>
-<p><a href="#_Toc462579160">Usage. 1</a></p>
-<p><a href="#_Toc462579161">Collection. 1</a></p>
-<p><a href="#_Toc462579162">List. 1</a></p>
-<p><a href="#_Toc462579163">LinkedList. 1</a></p>
-<p><a href="#_Toc462579164">Set. 1</a></p>
-<p><a href="#_Toc462579165">HashSet. 1</a></p>
-<p><a href="#_Toc462579166">Map. 1</a></p>
-<p><a href="#_Toc462579167">Treemap. 1</a></p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
+<h2>Table of Contents</h2>
+<ul>
+<li><a href="#_Toc462579160">Usage</a></li>
+<li><a href="#_Toc462579161">Collection</a></li>
+<li><a href="#_Toc462579162">List</a></li>
+<li><a href="#_Toc462579163">LinkedList</a></li>
+<li><a href="#_Toc462579164">Set</a></li>
+<li><a href="#_Toc462579165">HashSet</a></li>
+<li><a href="#_Toc462579166">Map</a></li>
+<li><a href="#_Toc462579167">Treemap</a></li>
+</ul>
 <h2><a name="_Toc462579160"></a>Usage</h2>
 <ul>
 <li>For using in your project,</li>
 </ul>
+<blockquote>
 <p>npm install typescript-collection</p>
+</blockquote>
 <ul>
-<li>For contributing,</li>
+<li>
+<p>For contributing,</p>
+</li>
 </ul>
+<blockquote>
 <p>npm install</p>
 <p>npm run test</p>
 <p>npm run test-coverage</p>
+</blockquote>
 <p>&nbsp;</p>
 <p>Following are the interfaces, classes along with their methods provided in the current API.</p>
 <p>&nbsp;</p>
@@ -31,115 +36,115 @@
 <li>This is the basic interface containing the generic methods.</li>
 <li>Parent interface of this API</li>
 </ul>
-<table width="640">
+<table width="955">
 <tbody>
 <tr>
-<td width="111">
+<td width="186">
 <p><strong>Method Name</strong></p>
 </td>
-<td width="84">
+<td width="74">
 <p><strong>Return </strong></p>
 </td>
-<td width="445">
+<td width="756">
 <p><strong>Description</strong></p>
 </td>
 </tr>
 <tr>
-<td width="111">
+<td width="125">
 <p>add(e:E)</p>
 </td>
-<td width="84">
+<td width="74">
 <p>Boolean</p>
 </td>
-<td width="445">
+<td width="756">
 <p>returns true if map contains the supplied key, K.</p>
 </td>
 </tr>
 <tr>
-<td width="111">
+<td width="125">
 <p>clear()</p>
 </td>
-<td width="84">
+<td width="74">
 <p>Boolean</p>
 </td>
-<td width="445">
+<td width="756">
 <p>clears the set and returns true is succeeds else returns false</p>
 </td>
 </tr>
 <tr>
-<td width="111">
+<td width="125">
 <p>contains(e:E)</p>
 </td>
-<td width="84">
+<td width="74">
 <p>Boolean</p>
 </td>
-<td width="445">
+<td width="756">
 <p>returns true is set contains e</p>
 </td>
 </tr>
 <tr>
-<td width="111">
+<td width="125">
 <p>isEmpty()</p>
 </td>
-<td width="84">
+<td width="74">
 <p>Boolean</p>
 </td>
-<td width="445">
+<td width="756">
 <p>returns true if set is empty</p>
 </td>
 </tr>
 <tr>
-<td width="111">
+<td width="125">
 <p>remove(e:E)</p>
 </td>
-<td width="84">
+<td width="74">
 <p>Boolean</p>
 </td>
-<td width="445">
+<td width="756">
 <p>removes object e from collection</p>
 </td>
 </tr>
 <tr>
-<td width="111">
+<td width="125">
 <p>size()</p>
 </td>
-<td width="84">
+<td width="74">
 <p>number</p>
 </td>
-<td width="445">
+<td width="756">
 <p>returns the size of the collection</p>
 </td>
 </tr>
 <tr>
-<td width="111">
+<td width="125">
 <p>toArray()</p>
 </td>
-<td width="84">
+<td width="74">
 <p>Array&lt;E&gt;</p>
 </td>
-<td width="445">
+<td width="756">
 <p>returns an array containing the collection</p>
 </td>
 </tr>
 <tr>
-<td width="111">
+<td width="125">
 <p>forEach(func)</p>
 </td>
-<td width="84">
+<td width="74">
 <p>function</p>
 </td>
-<td width="445">
+<td width="756">
 <p>Executes the supplied function on every element of the collection</p>
 </td>
 </tr>
 <tr>
-<td width="111">
+<td width="125">
 <p>filter(func)</p>
 </td>
-<td width="84">
+<td width="74">
 <p>function</p>
 </td>
-<td width="445">
+<td width="756">
 <p>filters map based on Boolean outcome of passed function</p>
 </td>
 </tr>
@@ -183,7 +188,7 @@
 <td width="186">
 <p><strong>Method Name</strong></p>
 </td>
-<td width="106">
+<td style="width: 106px;" width="106">
 <p><strong>Return </strong></p>
 </td>
 <td width="667">

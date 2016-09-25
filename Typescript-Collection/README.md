@@ -35,7 +35,7 @@
 </ol>
 <h3 id="collection">Collection</h3>
 <p>This is the basic interface containing the genric methods. The subsequent implementing interfaces will be having these method's implmentation using various algorithms.</p>
-<table>
+<table border="1" cellspacing="0" cellpadding="0">
 <tbody>
 <tr>
 <td width="200">

@@ -1,5 +1,5 @@
 <h1><a name="_Toc462579159"></a>Typescript Collection</h1>
-<p>Collection API in typescript following Java&rsquo;s collection framework.</p>
+<p>Collection API in typescript following Java&rsquo;s collection framework. Fully unit tested with test coverage.</p>
 <h2>Table of Contents</h2>
 <ul>
 <li><a href="#_Toc462579160">Usage</a></li>

@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html class="wf-ubuntu-n4-active wf-ubuntu-i4-active wf-ubuntu-n7-active wf-ubuntu-i7-active wf-active" lang="en">
+
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="profile" href="http://gmpg.org/xfn/11">
+	<link rel="pingback" href="http://pankajtripathi.github.io/TypescriptCollectionsAPI/xmlrpc.php">
+
+	<title>Typescript Collection – Collections in typescript following java's</title>
+	<script src="Typescript%20Collection%20%E2%80%93%20Collections%20in%20typescript%20following%20java%27s_files/beacon.js"
+		async=""></script><script async="" type="text/javascript" src="Typescript%20Collection%20%E2%80%93%20Collections%20in%20typescript%20following%20java%27s_files/webfont.js"></script>
+	<script
+		type="text/javascript">
+		WebFontConfig = {"google":{"families":["Ubuntu:r,i,b,bi:latin,latin-ext"]}}; (function() { var wf = document.createElement('script');
+		wf.src = 'https://s1.wp.com/wp-content/plugins/custom-fonts/js/webfont.js'; wf.type = 'text/javascript'; wf.async = 'true';
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(wf, s); })();
+		</script>
+		<style id="jetpack-custom-fonts-css">
+			.wf-active html {
+				font-family: "Ubuntu", sans-serif
+			}
+			
+			.wf-active pre {
+				font-family: "Ubuntu", sans-serif
+			}
+			
+			.wf-active body,
+			.wf-active button,
+			.wf-active input,
+			.wf-active select,
+			.wf-active textarea {
+				font-family: "Ubuntu", sans-serif
+			}
+			
+			.wf-active pre {
+				font-family: "Ubuntu", sans-serif
+			}
+		</style>
+		<link rel="dns-prefetch" href="https://s2.wp.com/">
+		<link rel="dns-prefetch" href="https://s1.wp.com/">
+		<link rel="dns-prefetch" href="https://s0.wp.com/">
+		<link rel="dns-prefetch" href="https://fonts.googleapis.com/">
+		<link rel="dns-prefetch" href="https://s.w.org/">
+		<link rel="alternate" type="application/rss+xml" title="Typescript Collection » Feed" href="http://pankajtripathi.github.io/TypescriptCollectionsAPI/feed/">
+		<link rel="alternate" type="application/rss+xml" title="Typescript Collection » Comments Feed" href="http://pankajtripathi.github.io/TypescriptCollectionsAPI/comments/feed/">
+		<script type="text/javascript">
+		/* <![CDATA[ */
+		function addLoadEvent(func) {
+			var oldonload = window.onload;
+			if (typeof window.onload != 'function') {
+				window.onload = func;
+			} else {
+				window.onload = function () {
+					oldonload();
+					func();
+				}
+			}
+		}
+		/* ]]> */
+	</script>
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s0.wp.com\/wp-content\/mu-plugins\/wpcom-smileys\/twemoji\/2\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/s1.wp.com\/wp-includes\/js\/wp-emoji-release.min.js?m=1473172720h&ver=4.6.1-RC1-38499"}};
+			!function(a,b,c){function d(a){var c,d,e,f,g,h=b.createElement("canvas"),i=h.getContext&&h.getContext("2d"),j=String.fromCharCode;if(!i||!i.fillText)return!1;switch(i.textBaseline="top",i.font="600 32px Arial",a){case"flag":return i.fillText(j(55356,56806,55356,56826),0,0),!(h.toDataURL().length<3e3)&&(i.clearRect(0,0,h.width,h.height),i.fillText(j(55356,57331,65039,8205,55356,57096),0,0),c=h.toDataURL(),i.clearRect(0,0,h.width,h.height),i.fillText(j(55356,57331,55356,57096),0,0),d=h.toDataURL(),c!==d);case"diversity":return i.fillText(j(55356,57221),0,0),e=i.getImageData(16,16,1,1).data,f=e[0]+","+e[1]+","+e[2]+","+e[3],i.fillText(j(55356,57221,55356,57343),0,0),e=i.getImageData(16,16,1,1).data,g=e[0]+","+e[1]+","+e[2]+","+e[3],f!==g;case"simple":return i.fillText(j(55357,56835),0,0),0!==i.getImageData(16,16,1,1).data[0];case"unicode8":return i.fillText(j(55356,57135),0,0),0!==i.getImageData(16,16,1,1).data[0];case"unicode9":return i.fillText(j(55358,56631),0,0),0!==i.getImageData(16,16,1,1).data[0]}return!1}function e(a){var c=b.createElement("script");c.src=a,c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g,h,i;for(i=Array("simple","flag","unicode8","diversity","unicode9"),c.supports={everything:!0,everythingExceptFlag:!0},h=0;h<i.length;h++)c.supports[i[h]]=d(i[h]),c.supports.everything=c.supports.everything&&c.supports[i[h]],"flag"!==i[h]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[i[h]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script><script type="text/javascript" src="Typescript%20Collection%20%E2%80%93%20Collections%20in%20typescript%20following%20java%27s_files/wp-emoji-release.js"></script>
+		<style type="text/css">
+			img.wp-smiley,
+			img.emoji {
+				display: inline !important;
+				border: none !important;
+				box-shadow: none !important;
+				height: 1em !important;
+				width: 1em !important;
+				margin: 0 .07em !important;
+				vertical-align: -0.1em !important;
+				background: none !important;
+				padding: 0 !important;
+			}
+		</style>
+		<link rel="stylesheet" id="all-css-0" href="Typescript%20Collection%20%E2%80%93%20Collections%20in%20typescript%20following%20java%27s_files/a_003.css"
+			type="text/css" media="all">
+		<link rel="stylesheet" id="libre-libre-css" href="Typescript%20Collection%20%E2%80%93%20Collections%20in%20typescript%20following%20java%27s_files/css_002.css"
+			type="text/css" media="all">
+		<link rel="stylesheet" id="all-css-2" href="Typescript%20Collection%20%E2%80%93%20Collections%20in%20typescript%20following%20java%27s_files/a.css"
+			type="text/css" media="all">
+		<link rel="stylesheet" id="print-css-3" href="Typescript%20Collection%20%E2%80%93%20Collections%20in%20typescript%20following%20java%27s_files/global-print.css"
+			type="text/css" media="print">
+		<link rel="stylesheet" id="all-css-4" href="Typescript%20Collection%20%E2%80%93%20Collections%20in%20typescript%20following%20java%27s_files/a_002.css"
+			type="text/css" media="all">
+		<script type="text/javascript" src="Typescript%20Collection%20%E2%80%93%20Collections%20in%20typescript%20following%20java%27s_files/a_002.js"></script>
+		<link
+			media="all" href="Typescript%20Collection%20%E2%80%93%20Collections%20in%20typescript%20following%20java%27s_files/css.css"
+			rel="stylesheet">
+			<style type="text/css"></style>
+			<link rel="stylesheet" id="all-css-0" href="Typescript%20Collection%20%E2%80%93%20Collections%20in%20typescript%20following%20java%27s_files/style.css"
+				type="text/css" media="all">
+			<!--[if lt IE 8]>
+<link rel='stylesheet' id='highlander-comments-ie7-css'  href='https://s1.wp.com/wp-content/mu-plugins/highlander-comments/style-ie7.css?m=1351637563h&#038;ver=20110606' type='text/css' media='all' />
+<![endif]-->
+			<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://pankajtripathi.github.io/TypescriptCollectionsAPI/xmlrpc.php?rsd">
+			<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://s1.wp.com/wp-includes/wlwmanifest.xml">
+			<meta name="generator" content="WordPress.com">
+			<link rel="shortlink" href="http://wp.me/7XGBw">
+
+			<!-- Jetpack Open Graph Tags -->
+			<meta property="og:type" content="website">
+			<meta property="og:title" content="Typescript Collection">
+			<meta property="og:description" content="Collections in typescript following java's">
+			<meta property="og:url" content="http://pankajtripathi.github.io/TypescriptCollectionsAPI/">
+			<meta property="og:site_name" content="Typescript Collection">
+			<meta property="og:image" content="https://s0.wp.com/i/blank.jpg">
+			<meta property="og:locale" content="en_US">
+			<meta name="twitter:site" content="@wordpressdotcom">
+			<meta property="fb:app_id" content="249643311490">
+			<link rel="shortcut icon" type="image/x-icon" href="https://s2.wp.com/i/favicon.ico" sizes="16x16 24x24 32x32 48x48">
+			<link rel="icon" type="image/x-icon" href="https://s2.wp.com/i/favicon.ico" sizes="16x16 24x24 32x32 48x48">
+			<link rel="apple-touch-icon-precomposed" href="https://s0.wp.com/i/webclip.png">
+			<link rel="search" type="application/opensearchdescription+xml" href="http://pankajtripathi.github.io/TypescriptCollectionsAPI/osd.xml"
+				title="Typescript Collection">
+			<link rel="search" type="application/opensearchdescription+xml" href="https://s1.wp.com/opensearch.xml" title="WordPress.com">
+			<meta name="theme-color" content="#2e7897">
+			<meta name="application-name" content="Typescript Collection">
+			<meta name="msapplication-window" content="width=device-width;height=device-height">
+			<meta name="msapplication-tooltip" content="Collections in typescript following java's">
+			<meta name="msapplication-task" content="name=Subscribe;action-uri=http://pankajtripathi.github.io/TypescriptCollectionsAPI/feed/;icon-uri=https://s2.wp.com/i/favicon.ico">
+			<meta name="msapplication-task" content="name=Sign up for a free blog;action-uri=http://wordpress.com/signup/;icon-uri=https://s2.wp.com/i/favicon.ico">
+			<meta name="msapplication-task" content="name=WordPress.com Support;action-uri=http://support.wordpress.com/;icon-uri=https://s2.wp.com/i/favicon.ico">
+			<meta name="msapplication-task" content="name=WordPress.com Forums;action-uri=http://forums.wordpress.com/;icon-uri=https://s2.wp.com/i/favicon.ico">
+			<meta name="title" content="Typescript Collection on WordPress.com">
+			<meta name="description" content="Collections in typescript following java's">
+			<style type="text/css" id="custom-background-css">
+				body.custom-background {
+					background-color: #2e7897;
+				}
+			</style>
+			<style type="text/css" id="syntaxhighlighteranchor"></style>
+			<link rel="stylesheet" type="text/css" id="gravatar-card-css" href="Typescript%20Collection%20%E2%80%93%20Collections%20in%20typescript%20following%20java%27s_files/hovercard.css">
+			<link rel="stylesheet" type="text/css" id="gravatar-card-services-css" href="Typescript%20Collection%20%E2%80%93%20Collections%20in%20typescript%20following%20java%27s_files/services.css">
+</head>
+
+<body class="home blog custom-background mp6 customizer-styles-applied highlander-enabled highlander-light infinite-scroll neverending">
+	<div id="page" class="hfeed site">
+		<a class="skip-link screen-reader-text" href="#content">Skip to content</a>
+		<header id="masthead" class="site-header" role="banner">
+			<div class="site-branding">
+				<h1 class="site-title"><a rel="home">Typescript Collection</a></h1>
+				<p class="site-description">Collections in typescript following java's</p>
+			</div>
+			<!-- .site-branding -->
+
+			<nav id="site-navigation" class="main-navigation" role="navigation">
+				<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">Menu</button>
+				<div class="menu-primary-container">
+					<ul aria-expanded="false" id="primary-menu" class="menu nav-menu">
+						<li id="menu-item-42" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-42"><a href="#usageLink">Usage</a></li>
+						<li aria-haspopup="true" id="menu-item-43" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-43"><a href="#collectionLink">Collections</a>
+							<ul class="sub-menu">
+								<li aria-haspopup="true" id="menu-item-65" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-65"><a href="#listLink">List</a>
+									<ul class="sub-menu">
+										<li id="menu-item-64" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-64"><a href="#linkedListLink">LinkedList</a></li>
+									</ul>
+								</li>
+								<li aria-haspopup="true" id="menu-item-67" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-67"><a href="#setLink">Set</a>
+									<ul class="sub-menu">
+										<li id="menu-item-66" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-66"><a href="#hashSetLink">HashSet</a></li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+						<li aria-haspopup="true" id="menu-item-45" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-45"><a href="#mapLink">Map</a>
+							<ul class="sub-menu">
+								<li id="menu-item-68" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-68"><a href="#treemapLink">TreeMap</a></li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</nav>
+			<!-- #site-navigation -->
+
+		</header>
+		<!-- #masthead -->
+
+		<div id="content" class="site-content">
+
+			<div id="primary" class="content-area">
+				<main id="main" class="site-main" role="main">
+
+
+
+
+					<article id="post-58" class="post-58 post type-post status-publish format-standard hentry category-uncategorized">
+						<header class="entry-header">
+
+
+							        <aside id="sidebar">
+          <a href="https://github.com/pankajtripathi/TypescriptCollectionsAPI/zipball/master" class="button">
+            Download Zip
+          </a></br>
+          <a href="https://github.com/pankajtripathi/TypescriptCollectionsAPI/tarball/master" class="button">
+            Download .tar.gz file
+          </a></br>
+
+          <p>Authors:<a href="https://github.com/bhaskeryadav">Bhasker Yadav</a>,<a href="https://github.com/pankajtripathi">Pankaj Tripathi</a></p>
+
+
+
+						</header>
+						<!-- .entry-header -->
+
+						<div class="entry-content">
+							<h2 id="usageLink">
+								<a name="#_Toc462579160"></a>Usage</h2>
+							<ul>
+								<li>Using in your project</li>
+							</ul>
+							<pre>&nbsp; &nbsp; npm install typescript-collection</pre>
+							<ul>
+								<li>Executing test cases</li>
+							</ul>
+							<pre>&nbsp; &nbsp; &nbsp;npm run test</pre>
+							<ul>
+								<li>Test coverage</li>
+							</ul>
+							<pre> npm run test-coverage</pre>
+							<p>&nbsp;</p>
+							<p>Following are the interfaces, classes along with their methods provided in the current API.</p>
+							<div id="collectionLink" style="height:70px;"></div>
+							<h2>
+								<a name="_Toc462579161"></a>Collection</h2>
+							<ul>
+								<li>This is the basic interface containing the generic methods.</li>
+								<li>Parent interface of this API</li>
+							</ul>
+							<table width="955">
+								<tbody>
+									<tr>
+										<td width="186"><strong>Method Name</strong></td>
+										<td width="74"><strong>Return </strong></td>
+										<td width="756"><strong>Description</strong></td>
+									</tr>
+									<tr>
+										<td width="125">add(e:E)</td>
+										<td width="74">Boolean</td>
+										<td width="756">returns true if map contains the supplied key, K.</td>
+									</tr>
+									<tr>
+										<td width="125">clear()</td>
+										<td width="74">Boolean</td>
+										<td width="756">clears the set and returns true is succeeds else returns false</td>
+									</tr>
+									<tr>
+										<td width="125">contains(e:E)</td>
+										<td width="74">Boolean</td>
+										<td width="756">returns true is set contains e</td>
+									</tr>
+									<tr>
+										<td width="125">isEmpty()</td>
+										<td width="74">Boolean</td>
+										<td width="756">returns true if set is empty</td>
+									</tr>
+									<tr>
+										<td width="125">remove(e:E)</td>
+										<td width="74">Boolean</td>
+										<td width="756">removes object e from collection</td>
+									</tr>
+									<tr>
+										<td width="125">size()</td>
+										<td width="74">number</td>
+										<td width="756">returns the size of the collection</td>
+									</tr>
+									<tr>
+										<td width="125">toArray()</td>
+										<td width="74">Array&lt;E&gt;</td>
+										<td width="756">returns an array containing the collection</td>
+									</tr>
+									<tr>
+										<td width="125">forEach(func)</td>
+										<td width="74">function</td>
+										<td width="756">Executes the supplied function on every element of the collection</td>
+									</tr>
+									<tr>
+										<td width="125">filter(func)</td>
+										<td width="74">function</td>
+										<td width="756">filters map based on Boolean outcome of passed function</td>
+									</tr>
+								</tbody>
+							</table>
+							<p>&nbsp;</p>
+							<div id="listLink" style="height:70px;"></div>
+							<h2>
+								<a name="_Toc462579162"></a>List</h2>
+							<ul>
+								<li>This interface extends collection interface</li>
+								<li>It represents collection of elements in sequential order</li>
+							</ul>
+							<p>Following are some of the implementations of this interface.</p>
+							<div id="linkedListLink" style="height:70px;"></div>
+							<h3>
+								<a name="_Toc462579163"></a>LinkedList</h3>
+							<ul>
+								<li>This collection stores data in a list fashion.</li>
+								<li>Useful for random insertions, deletions is to be performed on list</li>
+							</ul>
+							<div id="setLink" style="height:70px;"></div>
+							<h2>
+								<a name="_Toc462579164"></a>Set</h2>
+							<ul>
+								<li>Another sub interface of collection</li>
+								<li>Models mathematical set abstraction</li>
+								<li>Unique values are stored</li>
+							</ul>
+							<p>&nbsp;</p>
+							<p>Following are some of the implementations of this interface.</p>
+							<div id="hashSetLink" style="height:70px;"></div>
+							<h3>
+								<a name="_Toc462579165"></a>HashSet</h3>
+							<ul>
+								<li>Stores data based on the hash generated from it.</li>
+								<li>It uses MD5 algorithm to calculate hash of the data.</li>
+							</ul>
+							<div id="mapLink" style="height:70px;"></div>
+							<h2>
+								<a name="_Toc462579166"></a>Map</h2>
+							<ul>
+								<li>Map is collection of key, value pairs</li>
+								<li>Unlike other collections ,this is a collection of pairs</li>
+								<li>Stores unique keys, although values can be duplicate</li>
+							</ul>
+							<p>Following are the methods provided by this interface,</p>
+							<table>
+								<tbody>
+									<tr>
+										<td width="186"><strong>Method Name</strong></td>
+										<td style="width:106px;" width="106"><strong>Return </strong></td>
+										<td width="667"><strong>Description</strong></td>
+									</tr>
+									<tr>
+										<td width="186">put(key:K,value:V)</td>
+										<td width="106">value:V</td>
+										<td width="667">Inserts value v, with key k and returns the stored value</td>
+									</tr>
+									<tr>
+										<td width="186">clear()</td>
+										<td width="106">Boolean</td>
+										<td width="667">Clears map collection, returns true if succeeds in doing so else false</td>
+									</tr>
+									<tr>
+										<td width="186">containsKey(key:K)</td>
+										<td width="106">boolean</td>
+										<td width="667">returns true if map contains the supplied key, K.</td>
+									</tr>
+									<tr>
+										<td width="186">containsValue(value:V)</td>
+										<td width="106">boolean</td>
+										<td width="667">returns true if map contains the supplied value, V</td>
+									</tr>
+									<tr>
+										<td width="186">isEmpty()</td>
+										<td width="106">boolean</td>
+										<td width="667">returns true if map is empty</td>
+									</tr>
+									<tr>
+										<td width="186">size()</td>
+										<td width="106">number</td>
+										<td width="667">returns the number of entries in map</td>
+									</tr>
+									<tr>
+										<td width="186">get(key:K)</td>
+										<td width="106">value:V</td>
+										<td width="667">Returns the value to which the specified key is mapped, or null if this map contains no mapping for the key.</td>
+									</tr>
+									<tr>
+										<td width="186">forEach(func)</td>
+										<td width="106">function</td>
+										<td width="667">performs the supplied function on each entry</td>
+									</tr>
+									<tr>
+										<td width="186">Filter(func)</td>
+										<td width="106">function</td>
+										<td width="667">filters map based on Boolean outcome of passed function</td>
+									</tr>
+								</tbody>
+							</table>
+							<p>&nbsp;</p>
+							<div id="treemapLink" style="height:70px;"></div>
+							<h3>
+								<a name="_Toc462579167"></a>Treemap</h3>
+							<ul>
+								<li>Concrete implementation of map interface.</li>
+								<li>Stores data in binary search tree form</li>
+							</ul>
+							<p>&nbsp;</p>
+							<p>&nbsp;</p>
+
+						</div>
+						<!-- .entry-content -->
+					</article>
+					<!-- #post-## -->
+
+
+
+
+				</main>
+				<!-- #main -->
+			</div>
+			<!-- #primary -->
+
+
+		</div>
+		<!-- #content -->
+
+		<footer id="colophon" class="site-footer" role="contentinfo">
+
+			<div class="site-info">
+				This site is maintained by <a href="https://github.com/pankajtripathi/TypescriptCollectionsAPI">pankajtripathi</a> and
+				<a href="https://github.com/bhaskeryadav">bhaskeryadav</a>
+			</div>
+			<!-- .site-info -->
+		</footer>
+		<!-- #colophon -->
+	</div>
+	<!-- #page -->
+
+	<script type="text/javascript">
+		//<![CDATA[
+		var infiniteScroll = {"settings":{"id":"main","ajaxurl":"https:\/\/typescriptcollections.wordpress.com\/?infinity=scrolling","type":"scroll","wrapper":true,"wrapper_class":"infinite-wrap","footer":"masthead","click_handle":"1","text":"Older posts","totop":"Scroll back to top","currentday":"01.10.16","order":"DESC","scripts":[],"styles":[],"google_analytics":false,"offset":0,"history":{"host":"typescriptcollections.wordpress.com","path":"\/page\/%d\/","use_trailing_slashes":true,"parameters":""},"query_args":{"error":"","m":"","p":0,"post_parent":"","subpost":"","subpost_id":"","attachment":"","attachment_id":0,"name":"","static":"","pagename":"","page_id":0,"second":"","minute":"","hour":"","day":0,"monthnum":0,"year":0,"w":0,"category_name":"","tag":"","cat":"","tag_id":"","author":"","author_name":"","feed":"","tb":"","paged":0,"meta_key":"","meta_value":"","preview":"","s":"","sentence":"","title":"","fields":"","menu_order":"","embed":"","category__in":[],"category__not_in":[],"category__and":[],"post__in":[],"post__not_in":[],"post_name__in":[],"tag__in":[],"tag__not_in":[],"tag__and":[],"tag_slug__in":[],"tag_slug__and":[],"post_parent__in":[],"post_parent__not_in":[],"author__in":[],"author__not_in":[],"posts_per_page":7,"ignore_sticky_posts":false,"suppress_filters":false,"cache_results":false,"update_post_term_cache":true,"lazy_load_term_meta":true,"update_post_meta_cache":true,"post_type":"","nopaging":false,"comments_per_page":"50","no_found_rows":false,"order":"DESC"},"last_post_date":"2016-10-01 17:32:44","stats":"blog=117659478&v=wpcom&tz=0&user_id=0&subd=typescriptcollections&x_pagetype=infinite"}};
+		//]]>
+		</script>
+	<!-- wpcom_wp_footer -->
+	<script type="text/javascript" src="Typescript%20Collection%20%E2%80%93%20Collections%20in%20typescript%20following%20java%27s_files/gprofiles.js"></script>
+	<script type="text/javascript">
+/* <![CDATA[ */
+var WPGroHo = {"my_hash":""};
+/* ]]> */
+</script>
+	<script type="text/javascript" src="Typescript%20Collection%20%E2%80%93%20Collections%20in%20typescript%20following%20java%27s_files/wpgroho.js"></script>
+
+	<script>
+		//initialize and attach hovercards to all gravatars
+		jQuery( document ).ready( function( $ ) {
+
+			if (typeof Gravatar === "undefined"){
+				return;
+			}
+
+			if ( typeof Gravatar.init !== "function" ) {
+				return;
+			}			
+
+			Gravatar.profile_cb = function( hash, id ) {
+				WPGroHo.syncProfileData( hash, id );
+			};
+			Gravatar.my_hash = WPGroHo.my_hash;
+			Gravatar.init( 'body', '#wp-admin-bar-my-account' );
+		});
+	</script>
+
+	<div style="display:none">
+	</div>
+	<script type="text/javascript">
+/* <![CDATA[ */
+var HighlanderComments = {"loggingInText":"Logging In\u2026","submittingText":"Posting Comment\u2026","postCommentText":"Post Comment","connectingToText":"Connecting to %s","commentingAsText":"%1$s: You are commenting using your %2$s account.","logoutText":"Log Out","loginText":"Log In","connectURL":"https:\/\/typescriptcollections.wordpress.com\/public.api\/connect\/?action=request","logoutURL":"https:\/\/typescriptcollections.wordpress.com\/wp-login.php?action=logout&_wpnonce=718567e49e","homeURL":"https:\/\/typescriptcollections.wordpress.com\/","postID":"58","gravDefault":"identicon","enterACommentError":"Please enter a comment","enterEmailError":"Please enter your email address here","invalidEmailError":"Invalid email address","enterAuthorError":"Please enter your name here","gravatarFromEmail":"This picture will show whenever you leave a comment. Click to customize it.","logInToExternalAccount":"Log in to use details from one of these accounts.","change":"Change","changeAccount":"Change Account","comment_registration":"0","userIsLoggedIn":"","isJetpack":"0","text_direction":"ltr"};
+/* ]]> */
+</script>
+	<script type="text/javascript" src="Typescript%20Collection%20%E2%80%93%20Collections%20in%20typescript%20following%20java%27s_files/a_004.js"></script>
+	<div style="bottom: -50px;" id="infinite-footer">
+		<div style="width: 1144px;" class="container">
+			<div class="blog-info">
+				<a title="Scroll back to top" id="infinity-blog-title" href="http://pankajtripathi.github.io/TypescriptCollectionsAPI/" rel="home">
+						Typescript Collection					</a>
+			</div>
+
+		</div>
+	</div>
+	<!-- #infinite-footer -->
+
+	<script type="text/javascript">/*<![CDATA[*/if(typeof(addLoadEvent)!='undefined'){addLoadEvent(function(){if(top==self){i=document.createElement('img');i.src='https://botd2.wordpress.com/botd.gif?blog=117659478&post=0&lang=en&date=1475343164&ip=120.60.130.201&url=http://pankajtripathi.github.io/TypescriptCollectionsAPI/';i.id='botd2';i.style.width='0px';i.style.height='0px';i.style.overflow='hidden';document.body.appendChild(i);}});}/*]]>*/</script>
+
+	<div id="carousel-reblog-box">
+		<form action="" name="carousel-reblog">
+			<textarea id="carousel-reblog-content" name="carousel-reblog-content" placeholder="Add your thoughts here... (optional)"></textarea>
+			<label for="carousel-reblog-to-blog-id" id="carousel-reblog-lblogid">Post to</label>
+			<select name="carousel-reblog-to-blog-id" id="carousel-reblog-to-blog-id">
+						</select>
+
+			<div class="submit">
+				<span class="canceltext"><a href="" class="cancel">Cancel</a></span>
+				<input name="carousel-reblog-submit" class="button" id="carousel-reblog-submit" value="Reblog Post" type="submit">
+				<input id="carousel-reblog-blog-id" value="117659478" type="hidden">
+				<input id="carousel-reblog-blog-url" value="http://pankajtripathi.github.io/TypescriptCollectionsAPI/" type="hidden">
+				<input id="carousel-reblog-blog-title" value="Typescript Collection" type="hidden">
+				<input id="carousel-reblog-post-url" value="" type="hidden">
+				<input id="carousel-reblog-post-title" value="" type="hidden">
+			</div>
+
+			<input id="_wpnonce" name="_wpnonce" value="214618b342" type="hidden"><input name="_wp_http_referer" value="/" type="hidden">			</form>
+
+		<div class="arrow"></div>
+	</div>
+	<link rel="stylesheet" id="all-css-0" href="Typescript%20Collection%20%E2%80%93%20Collections%20in%20typescript%20following%20java%27s_files/jetpack-carousel.css"
+		type="text/css" media="all">
+	<!--[if lte IE 8]>
+<link rel='stylesheet' id='jetpack-carousel-ie8fix-css'  href='https://s1.wp.com/wp-content/mu-plugins/carousel/jetpack-carousel-ie8fix.css?m=1412618825h&#038;ver=20121024' type='text/css' media='all' />
+<![endif]-->
+	<link rel="stylesheet" id="all-css-2" href="Typescript%20Collection%20%E2%80%93%20Collections%20in%20typescript%20following%20java%27s_files/tiled-gallery.css"
+		type="text/css" media="all">
+	<script type="text/javascript">
+/* <![CDATA[ */
+var jetpackSlideshowSettings = {"spinner":"https:\/\/s1.wp.com\/wp-content\/mu-plugins\/shortcodes\/img\/slideshow-loader.gif","blog_id":"117659478","blog_subdomain":"typescriptcollections","user_id":"0"};
+/* ]]> */
+</script>
+	<script type="text/javascript">
+/* <![CDATA[ */
+var libreadminbar = [""];
+/* ]]> */
+</script>
+	<script type="text/javascript">
+/* <![CDATA[ */
+var jetpackCarouselStrings = {"widths":[370,700,1000,1200,1400,2000],"is_logged_in":"","lang":"en","ajaxurl":"https:\/\/typescriptcollections.wordpress.com\/wp-admin\/admin-ajax.php","nonce":"e38b5cc8ef","display_exif":"1","display_geo":"1","background_color":"black","comment":"Comment","post_comment":"Post Comment","write_comment":"Write a Comment...","loading_comments":"Loading Comments...","download_original":"View full size <span class=\"photo-size\">{0}<span class=\"photo-size-times\">\u00d7<\/span>{1}<\/span>","no_comment_text":"Please be sure to submit some text with your comment.","no_comment_email":"Please provide an email address to comment.","no_comment_author":"Please provide your name to comment.","comment_post_error":"Sorry, but there was an error posting your comment. Please try again later.","comment_approved":"Your comment was approved.","comment_unapproved":"Your comment is in moderation.","camera":"Camera","aperture":"Aperture","shutter_speed":"Shutter Speed","focal_length":"Focal Length","comment_registration":"0","require_name_email":"1","login_url":"https:\/\/typescriptcollections.wordpress.com\/wp-login.php?redirect_to=https%3A%2F%2Ftypescriptcollections.wordpress.com%2F2016%2F10%2F01%2F58%2F","local_comments_commenting_as":"<fieldset><label for=\"email\">Email (Required)<\/label> <input type=\"text\" name=\"email\" class=\"jp-carousel-comment-form-field jp-carousel-comment-form-text-field\" id=\"jp-carousel-comment-form-email-field\" \/><\/fieldset><fieldset><label for=\"author\">Name (Required)<\/label> <input type=\"text\" name=\"author\" class=\"jp-carousel-comment-form-field jp-carousel-comment-form-text-field\" id=\"jp-carousel-comment-form-author-field\" \/><\/fieldset><fieldset><label for=\"url\">Website<\/label> <input type=\"text\" name=\"url\" class=\"jp-carousel-comment-form-field jp-carousel-comment-form-text-field\" id=\"jp-carousel-comment-form-url-field\" \/><\/fieldset>","reblog":"Reblog","reblogged":"Reblogged","reblog_add_thoughts":"Add your thoughts here... (optional)","reblogging":"Reblogging...","post_reblog":"Post Reblog","stats_query_args":"blog=117659478&v=wpcom&tz=0&user_id=0&subd=typescriptcollections","is_public":"1","reblog_enabled":""};
+/* ]]> */
+</script>
+	<script type="text/javascript" src="Typescript%20Collection%20%E2%80%93%20Collections%20in%20typescript%20following%20java%27s_files/a_003.js"></script>
+		<script type="text/javascript" src="Typescript%20Collection%20%E2%80%93%20Collections%20in%20typescript%20following%20java%27s_files/widgets.js"></script>
+		<script type="text/javascript" src="Typescript%20Collection%20%E2%80%93%20Collections%20in%20typescript%20following%20java%27s_files/a.js"></script>
+		<script type="text/javascript">
+// <![CDATA[
+(function() {
+try{
+  if ( window.external &&'msIsSiteMode' in window.external) {
+    if (window.external.msIsSiteMode()) {
+      var jl = document.createElement('script');
+      jl.type='text/javascript';
+      jl.async=true;
+      jl.src='/wp-content/plugins/ie-sitemode/custom-jumplist.php';
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(jl, s);
+    }
+  }
+}catch(e){}
+})();
+// ]]>
+</script> <script type="text/javascript">
+	var skimlinks_pub_id = "725X584219"
+	var skimlinks_sitename = "typescriptcollections.wordpress.com";
+	</script>
+		<script type="text/javascript" src="Typescript%20Collection%20%E2%80%93%20Collections%20in%20typescript%20following%20java%27s_files/725X1342.js"></script>
+		<script
+			type="text/javascript">
+			jQuery.extend( infiniteScroll.settings.scripts, ["jquery","jquery-core","jquery-migrate","mobile-useragent-info","postmessage","jquery_inview","jetpack_resize","spin","jquery.spin","grofiles-cards","wpgroho","jquery.autoresize","highlander-comments","devicepx","jetpack_likes_queuehandler","the-neverending-homepage","jquery-cycle","jetpack-slideshow","libre-script","libre-navigation","libre-skip-link-focus-fix","wpcom-actionbar-bar","swfobject","videopress","jetpack-carousel","twitter-widgets","twitter-widgets-infinity","twitter-widgets-pending","tiled-gallery"]
+			); jQuery.extend( infiniteScroll.settings.styles, ["wpcom-smileys","jetpack_likes","the-neverending-homepage","jetpack-slideshow","wpcom-core-compat-playlist-styles","mp6hacks","wpcom-bbpress2-staff-css","libre-style","noticons","geo-location-flair","reblogging","a8c-global-print","wpcom-actionbar-bar","libre-wpcom","h4-global","libre-libre","highlander-comments","highlander-comments-ie7","jetpack-carousel","tiled-gallery","jetpack-carousel-ie8fix"]
+			);
+			</script> <script>
+			var _comscore = _comscore || [];
+			_comscore.push({
+				c1: "2",
+				c2: "7518284"
+			});
+			(function() {
+				var s = document.createElement("script"),
+					el = document.getElementsByTagName("script")[0];
+				s.async = true;
+				s.src = (document.location.protocol == "https:" ? "https://sb" : "http://b") + ".scorecardresearch.com/beacon.js";
+				el.parentNode.insertBefore(s, el);
+			})();
+		</script>
+			<noscript>
+				<p class="robots-nocontent"><img src="https://sb.scorecardresearch.com/p?c1=2&c2=7518284&c3=&c4=&c5=&c6=&c15=&cv=2.0&cj=1" alt="" style="display:none;"
+						width="1" height="1" /></p>
+			</noscript><script src="Typescript%20Collection%20%E2%80%93%20Collections%20in%20typescript%20following%20java%27s_files/w.js" type="text/javascript"
+				async="" defer="defer"></script>
+			<script type="text/javascript">
+_tkq = window._tkq || [];
+_stq = window._stq || [];
+_tkq.push(['storeContext', {'blog_id':'117659478','blog_tz':'0','user_lang':'en','blog_lang':'en','user_id':'0'}]);
+_stq.push(['view', {'blog':'117659478','v':'wpcom','tz':'0','user_id':'0','subd':'typescriptcollections'}]);
+_stq.push(['extra', {'crypt':'UE40eW5QN0p8M2Y/RE1LVmwrVi5vQS5fVFtfdHBbPyw1VXIrU3hWLHhmbUVsTTB6L1FmX041RXA0NlticjdsRG8majJtU3RleVB8TnlFOFVdWWNTSi5vaGx0TX44QWQuaHBWcytGZzBYX2hsV1kuaERSaiYuVnRTNVVGbmxuaU1aYUtMKzBocy41cUV2SWJtdU05bi4/ZnomWzdTdHwyV3RtM25VTEE0Sm50bFozWEt5VWJ5UDU4Nk1NQ0E1R3A4VityWnxrYS80QUtiWTkuXXc1NnN5RGtkNGpCY2I9TyxuTFNJXW5FWGtVLENKSFg/K1A/a3I='}]);
+_stq.push([ 'clickTrackerInit', '117659478', '0' ]);
+	</script>
+			<noscript><img src="https://pixel.wp.com/b.gif?v=noscript" style="height:0px;width:0px;overflow:hidden" alt="" /></noscript>
+			<script>
+if ( 'object' === typeof wpcom_mobile_user_agent_info ) {
+
+	wpcom_mobile_user_agent_info.init();
+	var mobileStatsQueryString = "";
+	
+	if( false !== wpcom_mobile_user_agent_info.matchedPlatformName )
+		mobileStatsQueryString += "&x_" + 'mobile_platforms' + '=' + wpcom_mobile_user_agent_info.matchedPlatformName;
+	
+	if( false !== wpcom_mobile_user_agent_info.matchedUserAgentName )
+		mobileStatsQueryString += "&x_" + 'mobile_devices' + '=' + wpcom_mobile_user_agent_info.matchedUserAgentName;
+	
+	if( wpcom_mobile_user_agent_info.isIPad() )
+		mobileStatsQueryString += "&x_" + 'ipad_views' + '=' + 'views';
+
+	if( "" != mobileStatsQueryString ) {
+		new Image().src = document.location.protocol + '//pixel.wp.com/g.gif?v=wpcom-no-pv' + mobileStatsQueryString + '&baba=' + Math.random();
+	}
+	
+}
+</script>
+
+
+			<img id="wpstats" alt=":)" src="Typescript%20Collection%20%E2%80%93%20Collections%20in%20typescript%20following%20java%27s_files/g.gif">
+			<img
+				style="width: 0px; height: 0px; overflow: hidden;" id="botd2" src="Typescript%20Collection%20%E2%80%93%20Collections%20in%20typescript%20following%20java%27s_files/botd.gif"></body>
+
+</html>

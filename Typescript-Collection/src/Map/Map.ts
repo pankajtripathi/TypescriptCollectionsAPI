@@ -74,4 +74,8 @@ export interface Map<K, V> {
      * @memberOf Map
      */
     filter(callback: FilterCallbackMaps<K, V>);
+
+    getEntries():Array<any>;
 }
+
+

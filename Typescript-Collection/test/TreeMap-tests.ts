@@ -1,8 +1,11 @@
+
 /// <reference path="../typings/globals/mocha/index.d.ts" />
 /// <reference path="../typings/globals/node/index.d.ts" />
 
 import {TreeMap} from '../src/Map/TreeMap/Treemap';
 import * as assert from "assert";
+
+var Rx=require('rx');
 
 describe("TreeMap", () => {
 
@@ -46,7 +49,20 @@ describe("TreeMap", () => {
     describe("put", () => {
         it("insert data", () => {
             insertData();
-        })
+        });
+        
+        it("should return undefined while saving undefined key",()=>{
+            assert.equal(t.put(null, new ValueTest("testNull")), null);
+        });
+
+    });
+
+    describe("rxjs",()=>{
+        it("test",()=>{
+            var m:Map<KeyTest,ValueTest>=new Map();
+            t.forEach((k,v)=>{
+                m.set(k,v);
+            })
     });
 
     describe("forEach", () => {
@@ -56,6 +72,12 @@ describe("TreeMap", () => {
             })
         })
     });
+
+    describe("getEntries",()=>{
+        it("getEntires size should be equal to treemap",()=>{
+            assert.equal(t.getEntries().length,t.size());
+        });
+    })
 
     describe("containsKey", () => {
         it("if the map contains the key", () => {

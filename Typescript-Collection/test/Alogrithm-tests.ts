@@ -18,4 +18,10 @@ describe("Algorithms", () => {
         });
     });
 
+    describe("Comparable value",()=>{
+        it("generates comparable value",()=>{
+            assert.equal(Algorithm.getComparableValue("bhasker"),JSON.stringify("bhasker"));
+        });
+    })
+
 });

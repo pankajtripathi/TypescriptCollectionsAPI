@@ -1,7 +1,6 @@
 import {Algorithm} from '../../Utils/Algorithms';
 import {FilterCallbackMaps, ForEachCallbackMaps} from '../../Utils/Function';
 import {Map} from '../Map';
-import {Entry} from './Entry';
 /**
  * 
  * 
@@ -17,10 +16,10 @@ export class TreeMap<K, V> implements Map<K, V>{
      * 
      * 
      * @private
-     * @type {Entry<K, V>}
+     * @type {TreeNode<K, V>}
      * @memberOf TreeMap
      */
-    private rootNde: Entry<K, V>;
+    private rootNde: TreeNode<K, V>;
     /**
      * 
      * 
@@ -40,13 +39,16 @@ export class TreeMap<K, V> implements Map<K, V>{
      * @memberOf TreeMap
      */
     put(key: K, value: V): V {
-        if (this.rootNde === undefined) {
-            this.rootNde = new Entry<K, V>();
-            return this.saveEntry(key, value, this.rootNde);
+        if(key == undefined || value == undefined){
+            return null;
+        }
+        if (this.rootNde == undefined) {
+            this.rootNde = new TreeNode<K, V>();
+            return this.saveTreeNode(key, value, this.rootNde);
         }
         else {
-            let parent: Entry<K, V> = this.rootNde;
-            let previousNode: Entry<K, V> = this.rootNde;
+            let parent: TreeNode<K, V> = this.rootNde;
+            let previousNode: TreeNode<K, V> = this.rootNde;
             let result: number = 0;
             
             do {
@@ -62,14 +64,14 @@ export class TreeMap<K, V> implements Map<K, V>{
                 }
             } while (parent != undefined);
             
-            parent = new Entry<K, V>();
+            parent = new TreeNode<K, V>();
             if (result == 1) {
                 previousNode.leftNode = parent;
             } else if (result == -1) {
                 previousNode.rightNode = parent;
             }
             
-            return this.saveEntry(key, value, parent);
+            return this.saveTreeNode(key, value, parent);
         }
     }
 
@@ -95,7 +97,7 @@ export class TreeMap<K, V> implements Map<K, V>{
      * @memberOf TreeMap
      */
     containsKey(key: K): boolean {
-        let node: Entry<K, V> = this.rootNde;
+        let node: TreeNode<K, V> = this.rootNde;
         do {
             let num: number = this.getComparableValue(node.key).localeCompare(this.getComparableValue(key));
             if (num === 0) {
@@ -167,7 +169,7 @@ export class TreeMap<K, V> implements Map<K, V>{
      * @memberOf TreeMap
      */
     get(key: K): V {
-        let node: Entry<K, V> = this.rootNde;
+        let node: TreeNode<K, V> = this.rootNde;
 
         while (node != undefined) {
             let num: number = this.getComparableValue(node.key).localeCompare(this.getComparableValue(key));
@@ -187,11 +189,11 @@ export class TreeMap<K, V> implements Map<K, V>{
      * 
      * 
      * @private
-     * @param {Entry<K, V>} focusNode
+     * @param {TreeNode<K, V>} focusNode
      * 
      * @memberOf TreeMap
      */
-    private inOrderTraverseTree(focusNode: Entry<K, V>,callback:ForEachCallbackMaps<K,V>) {
+    private inOrderTraverseTree(focusNode: TreeNode<K, V>,callback:ForEachCallbackMaps<K,V>) {
         if (focusNode != undefined) {
             this.inOrderTraverseTree(focusNode.leftNode,callback);
             callback(focusNode.key,focusNode.value);
@@ -205,12 +207,12 @@ export class TreeMap<K, V> implements Map<K, V>{
      * @private
      * @param {K} k
      * @param {V} v
-     * @param {Entry<K, V>} parent
+     * @param {TreeNode<K, V>} parent
      * @returns {V}
      * 
      * @memberOf TreeMap
      */
-    private saveEntry(k: K, v: V, parent: Entry<K, V>): V {
+    private saveTreeNode(k: K, v: V, parent: TreeNode<K, V>): V {
         parent.setKey(k);
         parent.setValue(v);
         this.treeSize++;
@@ -253,18 +255,18 @@ export class TreeMap<K, V> implements Map<K, V>{
     remove(key:K):V{
         let val:V=this.get(key);
         if(val!=undefined){
-        this.rootNde=this.deleteEntry(this.rootNde,key);
+        this.rootNde=this.deleteTreeNode(this.rootNde,key);
         this.treeSize--;
         }
         return val;
     }
 
-    private deleteEntry(node:Entry<K,V>,key:K):Entry<K,V>{
+    private deleteTreeNode(node:TreeNode<K,V>,key:K):TreeNode<K,V>{
         let diff=Algorithm.getComparableValue(node.key).localeCompare(Algorithm.getComparableValue(key));
         if(diff>0){
-            node.leftNode=this.deleteEntry(node.leftNode,key);
+            node.leftNode=this.deleteTreeNode(node.leftNode,key);
         }else if(diff<0){
-            node.rightNode=this.deleteEntry(node.rightNode,key);
+            node.rightNode=this.deleteTreeNode(node.rightNode,key);
         }else if(diff === 0){
             if(node.leftNode===undefined){
                 return node.rightNode;
@@ -274,12 +276,12 @@ export class TreeMap<K, V> implements Map<K, V>{
 
             node.key=this.getMinimumValue(node.rightNode);
 
-            node.rightNode=this.deleteEntry(node.rightNode,node.key);
+            node.rightNode=this.deleteTreeNode(node.rightNode,node.key);
         }
         return node;
     }
 
-    private getMinimumValue(node:Entry<K,V>):K{
+    private getMinimumValue(node:TreeNode<K,V>):K{
         let minimumKey:K=node.key;
         while(node.leftNode!=undefined){
             minimumKey=node.leftNode.key;
@@ -303,4 +305,37 @@ export class TreeMap<K, V> implements Map<K, V>{
         });
     }
 
+    getEntries():Array<Entry<K,V>>{
+        let returnData:Array<Entry<K,V>>=new Array<Entry<K,V>>();
+        this.forEach((k,v)=>{
+            let entry:Entry<K,V>=new Entry<K,V>();
+            entry.key=k;
+            entry.value=v;
+            returnData.push(entry);
+        });
+        return returnData;
+    }
+
+}
+
+class Entry<K,V>{
+
+    key:K;
+    value:V;
+
+}
+
+class TreeNode<K,V> extends Entry<K,V>{
+    
+    leftNode:TreeNode<K,V>;
+    rightNode:TreeNode<K,V>;    
+    
+    setKey(key1:K){
+        this.key=key1;
+    }
+    
+    setValue(value1:V){
+        this.value=value1;
+    }
+    
 }
